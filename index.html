@@ -68,7 +68,7 @@ header.top .wrap{display:flex;align-items:center;gap:20px;min-height:68px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:800;font-size:1.15rem;white-space:nowrap}
 .brand .mark{width:34px;height:34px;color:var(--brand)}
 nav.menu{display:flex;gap:6px;margin-inline-start:auto}
-nav.menu a{text-decoration:none;font-weight:700;font-size:.98rem;padding:8px 14px;border-radius:999px;color:var(--ink)}
+nav.menu a{white-space:nowrap;text-decoration:none;font-weight:700;font-size:.98rem;padding:8px 14px;border-radius:999px;color:var(--ink)}
 nav.menu a:hover{background:var(--card)}
 .top-actions{display:flex;flex-direction:column;align-items:center;gap:7px;padding-block:9px;flex:none}
 .top .btn{padding:8px 24px;font-size:.95rem}
@@ -77,8 +77,9 @@ nav.menu a:hover{background:var(--card)}
 .soc-mini a:hover,.soc-mini a:focus-visible{background:var(--brand);border-color:var(--brand);color:#fff;transform:translateY(-1px)}
 .soc-mini span{opacity:.4;cursor:default}
 .soc-mini svg{width:16px;height:16px}
-@media (max-width:1000px){nav.menu a{padding:8px 9px;font-size:.92rem}}
-@media (max-width:860px){nav.menu{display:none}.top-actions{margin-inline-start:auto}header.top .wrap{gap:12px}.brand{font-size:1rem;gap:8px;min-width:0}}
+@media (max-width:1240px){nav.menu{gap:2px}nav.menu a{padding:8px 9px;font-size:.92rem}}
+@media (max-width:1080px){nav.menu a{padding:6px 7px;font-size:.86rem}}
+@media (max-width:980px){nav.menu{display:none}.top-actions{margin-inline-start:auto}header.top .wrap{gap:12px}.brand{font-size:1rem;gap:8px;min-width:0}}
 @media (max-width:380px){.soc-mini{gap:5px}.soc-mini a,.soc-mini span{width:26px;height:26px}.soc-mini svg{width:14px;height:14px}.brand{font-size:.92rem}.brand .mark{width:28px;height:28px}}
 
 /* ───── الأزرار ───── */
@@ -352,9 +353,9 @@ const CONFIG = {
   heroSub: "تركيب وصيانة وشحن فريون وتوريد أجهزة التكييف، بخدمة سريعة لحد باب بيتك.",  // 🔵 الوصف تحت العنوان
   chips: ["تركيب", "صيانة", "شحن فريون", "توريد أجهزة"],          // 🔵 الشرائح تحت الأزرار
 
-  whatsapp: "",                                // 🔵 رقم واتساب (بالصفر الأول) مثال: "01012345678"
+  whatsapp: "01282545814",                                // 🔵 رقم واتساب (بالصفر الأول) مثال: "01012345678"
   whatsappMsg: "السلام عليكم، عايز أستفسر عن خدمة من خدمات التكييف",  // 🔵 الرسالة الجاهزة
-  phones: [],                                  // 🔵 أرقام الاتصال مثال: ["01012345678", "01112345678"]
+  phones: ["01282545814"],                                  // 🔵 أرقام الاتصال مثال: ["01012345678", "01112345678"]
 
   address: "",        // 🔵 عنوان المركز (فاضي = مش هيظهر)
   hours: "",          // 🔵 مواعيد العمل، مثال: "يوميًا من 9 ص إلى 10 م"
@@ -363,15 +364,16 @@ const CONFIG = {
 
   // 🔵 السوشيال ميديا: يوزرنيم أو لينك كامل — الأيقونات بتظهر في الهيدر تحت زرار «احجز الآن»
   social: {
-    facebook:        "",
-    instagram:       "",
-    tiktok:          "",
-    x:               "",
+    facebook:        "https://www.facebook.com/share/19onSWY7AM/",
+    instagram:       "https://www.instagram.com/aboud._centre1600587",
+    threads:         "https://www.threads.com/@aboud._centre1600587",
+    tiktok:          "https://www.tiktok.com/@aboudair1",
+    x:               "https://x.com/Aboudcentr6m",
     youtube:         "",
     whatsappChannel: "",
     telegram:        "",
     snapchat:        "",
-    linkedin:        ""
+    linkedin:        "https://www.linkedin.com/in/aboud-centre-327a62447"
   },
   showEmptySocial: false,   // 🔵 false = تظهر الأيقونات اللي ليها لينك بس | true = تظهر الكل (الفاضية باهتة)
 
@@ -518,6 +520,7 @@ const CONFIG = {
   var SOC = [
     ["facebook","Facebook",function(u){return "https://www.facebook.com/"+u},'<path '+G+' d="M14.5 21v-8h2.6l.5-3.2h-3.1V8c0-1 .4-1.7 1.8-1.7h1.4V3.5c-.3 0-1.3-.2-2.4-.2-2.5 0-4.1 1.5-4.1 4.2v2.3H8.5V13h2.7v8z"/>'],
     ["instagram","Instagram",function(u){return "https://www.instagram.com/"+u},'<rect '+G+' x="3.5" y="3.5" width="17" height="17" rx="5"/><circle '+G+' cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1.1" fill="currentColor"/>'],
+    ["threads","Threads",function(u){return "https://www.threads.com/@"+u},'<path '+G+' d="M16.8 11.2c-.4-3-2.3-4.4-4.9-4.4-3.1 0-5 2.3-5 5.4 0 3.3 2 5.6 5.2 5.6 2.6 0 4.6-1.4 4.6-3.6 0-1.9-1.5-3-3.7-3-1.9 0-3.2.9-3.2 2.3 0 1.2 1 2 2.3 2 1.9 0 2.8-1.5 2.9-3.6.1-2.6-1-4.6-3.2-5.2M12 21c-5 0-8.5-3.5-8.5-9S7 3 12 3c4.1 0 7.1 2.2 8.1 6"/>'],
     ["tiktok","TikTok",function(u){return "https://www.tiktok.com/@"+u},'<path '+G+' d="M14 3.5v11a3.8 3.8 0 1 1-3.8-3.8M14 3.5c.4 2.6 2 4.3 4.8 4.6"/>'],
     ["youtube","YouTube",function(u){return "https://www.youtube.com/@"+u},'<rect '+G+' x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.2 9.3v5.4l4.7-2.7z" fill="currentColor"/>'],
     ["whatsappChannel","واتساب",function(u){return "https://whatsapp.com/channel/"+u},'<path '+G+' d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/><path '+G+' d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-.8.8c-1-.4-1.9-1.3-2.3-2.3l.8-.8-1-2z"/>'],
